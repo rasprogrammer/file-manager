@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary-color : #007bff;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .toolbar-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: left;
+    padding: 10px 10px;
+    background: lightgray;
+    margin-top: 1px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .file-area {
+    border: 2px dashed #ddd;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+  }
+
+  .file-structure {
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ */
+  }
+
+  
+  .file-look {
+
+  }
+
+  .folder-look {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid lightgray;
+  }
+
+  .highlight-file{
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  .folder-look:has(.highlight-file) .folder-icon {
+   color: white;
+  }
+
+  .folder-icon{
+    font-size: 25px;
+    color: var(--primary-color);
+  }
+
+  .file-icon{
+    font-size: 25px;
+  }
+
+  #pathinfo a {
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Style for the toolbox */
+  .toolbox {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    width: 220px;
+    display: none;
+  }
+
+  .toolbox ul {
+    list-style-type: none;
+    margin: 0;
+  }
+
+  .toolbox li {
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+
+  .toolbox li:hover {
+    background-color: #ddd;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  /* Style for the file editable span */
+  #fileArea span[contenteditable="true"] {
+    border: 1px solid #ccc;          /* Border to indicate the editable area */
+    padding: 5px;                    /* Add padding for better spacing */
+    background-color: #f9f9f9;       /* Light background color to indicate editability */
+    outline: none;                   /* Remove outline when focused */
+    font-style: italic;              /* Optional: make text italic for a visual cue */
+    color: black;
+  }
+
+  /* Style when the span is focused (editable) */
+  #fileArea span[contenteditable="true"]:focus {
+    border-color: #e7f1ff;           /* Change border color when focused */
+    background-color: white;       /* Change background color when focused */
+  }
+
+  /* Optional: Add a cursor style for better user experience */
+  #fileArea span[contenteditable="true"]:empty:before {
+    content: "Enter text...";         /* Placeholder text */
+    color: black;
+  }
